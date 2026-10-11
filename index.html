@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2b9deb">
+  <meta name="description" content="毛线小织匠网页试玩，整理同色毛线，为模特编织新衣。">
+  <title>毛线小织匠 · 网页试玩</title>
+  <link rel="icon" type="image/png" href="./assets/images/recovered_yarn_red.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="game-shell" aria-label="毛线小织匠网页游戏">
+    <canvas id="game-canvas" width="360" height="640" aria-label="毛线小织匠棋盘。点击毛线柱，再点击空柱或同色毛线柱进行搬移。"></canvas>
+    <section id="loading-screen" class="cover" aria-live="polite">
+      <div class="brand"><span class="eyebrow">WOOL STUDIO</span><h1>毛线小织匠</h1><p>整理缤纷毛线 · 编织心动新衣</p></div>
+      <div class="loading-art"><img src="./assets/images/tutorial_guide.png" alt="织匠女孩"><span class="wool-dot yellow"></span><span class="wool-dot red"></span><span class="wool-dot green"></span></div>
+      <div class="load-track"><div id="load-progress"></div></div>
+      <p id="load-message">正在准备毛线与关卡…</p>
+      <button id="retry-button" class="primary" hidden>重新加载</button>
+      <p class="health">适龄提示：8+<br>抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。<br>适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+    </section>
+    <section id="start-screen" class="cover" hidden>
+      <div class="brand"><span class="eyebrow">WOOL STUDIO</span><h1>毛线小织匠</h1><p>每一种颜色，都有一件新衣在等你</p></div>
+      <div class="welcome-models"><img src="./assets/images/recovered_model_dress_1.png" alt="模特新衣"><img src="./assets/images/recovered_model_dress_2.png" alt="模特新衣"><img src="./assets/images/recovered_model_dress_3.png" alt="模特新衣"></div>
+      <div class="welcome-actions"><p id="progress-label">800 关缤纷订单</p><button id="start-button" class="primary">开始网页试玩</button><button id="music-button" class="secondary">音乐：开启</button><div class="legal-links"><button data-legal="privacy">隐私政策</button><span>·</span><button data-legal="agreement">用户协议</button></div></div>
+      <p class="health">网页试玩 · 无需账号 · 浏览器本地进度<br>南京兴宇信息科技有限公司　｜　适龄 8+</p>
+    </section>
+    <section id="consent-screen" class="modal-screen" hidden role="dialog" aria-modal="true" aria-labelledby="consent-title">
+      <div class="modal-card"><span class="eyebrow">欢迎来到毛线工作室</span><h2 id="consent-title">隐私与网页试玩说明</h2><div class="legal-copy"><p>本网页由南京兴宇信息科技有限公司提供。试玩无需注册，不接入 Android 账号、广告或支付 SDK。</p><p>游戏进度、教程状态、音乐设置和同意记录保存在当前网站的浏览器本地存储中，不由游戏主动上传。清理网站数据、使用隐私浏览、更换浏览器或网站地址可能丢失进度。</p><p>网页与素材通过网络加载。GitHub Pages 等静态托管服务可能因提供服务记录访问 IP、请求时间和浏览器信息。请勿在网页中填写个人敏感信息。</p><p>请阅读<a href="#" data-legal="privacy">《隐私政策》</a>与<a href="#" data-legal="agreement">《用户协议》</a>。未成年人请在监护人指导下试玩，合理安排时间。</p></div><button id="agree-button" class="primary">同意并继续</button><button id="decline-button" class="text-button">暂不同意，退出试玩</button></div>
+    </section>
+    <section id="legal-screen" class="modal-screen" hidden role="dialog" aria-modal="true" aria-labelledby="legal-title"><div class="modal-card legal-card"><h2 id="legal-title">隐私政策</h2><div id="legal-content" class="legal-copy"></div><button id="legal-close" class="primary">返回游戏</button></div></section>
+    <section id="exit-screen" class="cover" hidden><div class="exit-card"><h1>下次再来织新衣</h1><p>已退出试玩。您可关闭此页面。</p><button id="return-button" class="primary">返回欢迎页</button></div></section>
+    <div id="accessible-status" class="sr-only" aria-live="polite"></div>
+  </main>
+  <audio id="bgm" src="./assets/audio/game_bgm.mp3" preload="auto" loop></audio>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
